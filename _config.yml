@@ -30,6 +30,18 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title/
 
+include:
+  - _pages
+  - files
+
+exclude:
+  - vendor
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - Dockerfile
+
 collections:
   publications:
     output: true
