@@ -3,7 +3,7 @@ title: "Junteng Liu"
 title_separator: "-"
 name: &name "Junteng Liu"
 description: &description "First-year PhD candidate at HKUST NLP Group focusing on natural language processing and machine learning"
-url: https://betabruindicate.github.io/LJT-Homepage
+url: https://betabruindicate.github.io
 baseurl: "/LJT-Homepage"
 repository: "Betabruindicate/LJT-Homepage"
 
