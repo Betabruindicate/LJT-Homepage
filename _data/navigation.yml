@@ -1,7 +1,5 @@
-# Navigation links for the personal site. Only existing pages represented in memory are linked.
 main:
   - title: "Publications"
     url: /publications/
-
   - title: "CV"
     url: /cv/
