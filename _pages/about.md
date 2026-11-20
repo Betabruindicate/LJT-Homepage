@@ -43,8 +43,6 @@ Research group: HKUST NLP Group, led by Professor Junxian He; research focus: na
 
 ## Skills and Research Interests
 
-The skills and research areas recorded in memory are:
-
 - **Natural Language Processing:** primary research focus, combined with machine learning.
 - **Machine Learning:** research focus combined with natural language processing.
 - **LLM Reasoning and Reinforcement Learning**
@@ -53,23 +51,23 @@ The skills and research areas recorded in memory are:
 
 ## Publications
 
-All six publications recorded in memory are listed here and on the [Publications subpage](publications/). Additional publication information is available on [Google Scholar](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate).
+The six publications are listed below and on the [Publications subpage](publications/). Additional publication information is available on [Google Scholar](https://scholar.google.com/citations?hl=en&user=tbK9jl4AAAAJ&view_op=list_works&sortby=pubdate).
 
 ### 2025
 
 1. **SynLogic: Synthesizing Verifiable Reasoning Data at Scale for Learning Logical Reasoning and Beyond** — arXiv (2025); first author: Junteng Liu.  
    Authors: Junteng Liu, Yuanxiang Fan, Zhuo Jiang, Han Ding, Yongyi Hu, Chi Zhang, Yiqi Shi, Shitong Weng, Aili Chen, Shiqi Chen, Yunan Huang, Mozhi Zhang, Pengyu Zhao, Junjie Yan, Junxian He.  
-   Memory record: has a GitHub code repository.
+   Code repository available on GitHub.
 
 2. **On the Perception Bottleneck of VLMs for Chart Understanding** — arXiv (2025); first author: Junteng Liu.  
    Authors: Junteng Liu, Weihao Zeng, Xiwen Zhang, Yijun Wang, Zifei Shan, Junxian He.  
-   GitHub code repository recorded in memory: **Vision4Chart**.
+   GitHub code repository: **Vision4Chart**.
 
 ### 2024
 
 3. **On the Universal Truthfulness Hyperplane Inside LLMs** — EMNLP 2024; first author: Junteng Liu.  
    Authors: Junteng Liu, Shiqi Chen, Yu Cheng, Junxian He.  
-   GitHub code repository recorded in memory: **Universal_Truthfulness_Hyperplane**.
+   GitHub code repository: **Universal_Truthfulness_Hyperplane**.
 
 4. **In-Context Sharpness as Alerts: An Inner Representation Perspective for Hallucination Mitigation** — ICML 2024; co-author: Junteng Liu.  
    Authors: Shiqi Chen, Miao Xiong, Junteng Liu, Zhengxuan Wu, Teng Xiao, Siyang Gao, Junxian He.
