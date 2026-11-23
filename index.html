@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Junteng Liu — LJT-Homepage</title>
+  <meta name="description" content="Junteng Liu is a first-year Ph.D. candidate at HKUST NLP Group researching NLP, machine learning, LLM reasoning, reinforcement learning, VLM hallucination, truthfulness, and interpretability.">
+  <style>
+    :root{--ink:#172033;--muted:#5d6b82;--line:#dfe7f1;--brand:#1f4e79;--brand-2:#2f75b5;--soft:#f4f8fc;--card:#fff;--accent:#e8f2fb;--radius:18px;--shadow:0 14px 38px rgba(23,32,51,.10)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font:16px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:var(--ink);background:linear-gradient(180deg,#f7fbff 0,#fff 340px)}
+    a{color:var(--brand-2);text-decoration:none} a:hover{text-decoration:underline} img{max-width:100%}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1180px;margin:auto;padding:12px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}.brand{font-weight:800;color:var(--brand);font-size:1.08rem;letter-spacing:.2px}.navlinks{display:flex;gap:15px;flex-wrap:wrap;margin-left:auto}.navlinks a{color:var(--muted);font-weight:650;font-size:.94rem}.navlinks a:hover{color:var(--brand);text-decoration:none}
+    .shell{max-width:1180px;margin:0 auto;padding:34px 24px 64px;display:grid;grid-template-columns:310px minmax(0,1fr);gap:30px}.side{position:sticky;top:76px;align-self:start}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.profile{padding:26px 24px;text-align:center}.avatar{width:154px;height:154px;border-radius:50%;object-fit:cover;border:5px solid #fff;outline:1px solid var(--line);box-shadow:0 12px 28px rgba(31,78,121,.18);background:var(--accent)}.profile h1{font-size:1.65rem;line-height:1.2;margin:16px 0 5px}.tagline{color:var(--brand);font-weight:750;margin:0 0 10px}.bio{color:var(--muted);font-size:.96rem;margin:0 0 18px}.contact-list{list-style:none;padding:0;margin:0;text-align:left;display:grid;gap:9px}.contact-list a,.contact-list span{display:flex;gap:10px;align-items:flex-start;padding:9px 11px;border-radius:12px;background:var(--soft);border:1px solid #e8eff7;color:var(--ink);font-size:.93rem;overflow-wrap:anywhere}.contact-list b{color:var(--brand);min-width:58px;display:inline-block}.main{min-width:0}.hero{padding:34px 34px 30px;border-radius:24px;background:radial-gradient(circle at 92% 8%,rgba(47,117,181,.16),transparent 34%),linear-gradient(135deg,#173b5c,#1f4e79 58%,#2b6697);color:#fff;box-shadow:var(--shadow)}.hero .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:800;color:#b9dcff;margin:0 0 10px}.hero h2{font-size:clamp(1.8rem,4vw,3rem);line-height:1.08;margin:0 0 16px}.hero p{font-size:1.04rem;color:#e7f2fc;max-width:850px;margin:0}.hero .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}.chip{border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.10);color:#fff;border-radius:999px;padding:6px 12px;font-size:.84rem;font-weight:650}
+    section.block{margin-top:24px;padding:28px 30px}.section-head{display:flex;align-items:center;gap:12px;margin:0 0 20px}.section-head .num{width:34px;height:34px;border-radius:11px;background:var(--accent);color:var(--brand);display:grid;place-items:center;font-weight:900}.section-head h2{font-size:1.55rem;margin:0;color:var(--brand)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.fact,.item{border:1px solid var(--line);background:var(--soft);border-radius:15px;padding:16px 18px}.fact h3,.item h3{margin:0 0 6px;font-size:1.04rem}.fact p,.item p{margin:0;color:var(--muted)}.item{background:#fff}.item .meta{display:flex;gap:10px;flex-wrap:wrap;color:var(--brand);font-weight:750;font-size:.9rem;margin-bottom:5px}.item ul{margin:8px 0 0;padding-left:1.15rem}.item li{margin:.25rem 0}.timeline{display:grid;gap:14px}.role{border-left:4px solid var(--brand-2);padding:15px 18px;background:linear-gradient(90deg,var(--soft),#fff 55%);border-radius:0 15px 15px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.role h3{margin:0 0 4px}.role .when{color:var(--brand);font-weight:800;font-size:.91rem}.role p{margin:5px 0 0;color:var(--muted)}
+    .pub{padding:18px 0;border-top:1px solid var(--line)}.pub:first-of-type{border-top:0;padding-top:4px}.pub-title{font-size:1.08rem;font-weight:800;color:var(--ink);line-height:1.42}.pub-title a{color:inherit}.pub-title a:hover{color:var(--brand)}.authors{color:var(--muted);font-size:.94rem;margin:5px 0}.venue{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:7px}.badge{display:inline-flex;align-items:center;border-radius:999px;padding:4px 10px;font-size:.78rem;font-weight:800}.badge.venue{background:var(--accent);color:var(--brand)}.badge.role{background:#eef8ef;color:#27723b;border:1px solid #d7eddb}.code{font-size:.88rem;color:var(--muted);margin-top:7px}.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{background:var(--soft);border:1px solid var(--line);border-radius:13px;padding:10px 14px;font-weight:650;color:#29445f}.skill.strong{background:var(--brand);border-color:var(--brand);color:#fff}.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.contact-card{display:block;padding:18px;border-radius:16px;border:1px solid var(--line);background:var(--soft);color:var(--ink)}.contact-card strong{display:block;color:var(--brand);margin-bottom:4px}.contact-card span{color:var(--muted);overflow-wrap:anywhere}.note{font-size:.9rem;color:var(--muted);margin-top:16px}.footer{color:var(--muted);text-align:center;padding:28px 20px 8px;font-size:.9rem}
+    @media(max-width:920px){.shell{grid-template-columns:1fr}.side{position:static}.profile{max-width:520px;margin:auto}.grid2,.contact-grid{grid-template-columns:1fr}.navlinks{margin-left:0}.hero,section.block{padding:25px 22px}}
+    @media print{.topbar,.navlinks{display:none}.shell{display:block;max-width:none;padding:0}.side{margin-bottom:18px}.card,.hero,section.block{box-shadow:none;break-inside:avoid}.hero{background:#fff;color:#000;border:1px solid #ccc}.hero p,.hero .eyebrow{color:#333}.chip{color:#000;border-color:#aaa}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top">Junteng Liu</a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#background">Background</a>
+        <a href="#experience">Experience</a>
+        <a href="publications/">Publications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="cv/">CV</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="shell" id="top">
+    <aside class="side">
+      <div class="card profile">
+        <img class="avatar" src="https://github.com/Vicent0205.png?size=400" alt="GitHub profile avatar for Junteng Liu" width="154" height="154">
+        <h1>Junteng Liu</h1>
+        <p class="tagline">Ph.D. Candidate · HKUST NLP Group</p>
+        <p class="bio">Natural language processing, machine learning, LLM reasoning, reinforcement learning, truthfulness, and interpretability.</p>
+        <div class="contact-list">
+          <a href="mailto:jliugi@connect.ust.hk"><b>Email</b><span>jliugi@connect.ust.hk</span></a>
+          <a href="https://github.com/Vicent0205"><b>GitHub</b><span>Vicent0205</span></a>
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=tbK9jl4AAAAJ&amp;view_op=list_works&amp;sortby=pubdate"><b>Scholar</b><span>Google Scholar profile</span></a>
+          <a href="https://x.com/junteng88716710"><b>X</b><span>@junteng88716710</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero" id="about">
+        <p class="eyebrow">Personal academic homepage · LJT-Homepage</p>
+        <h2>Junteng Liu</h2>
+        <p>Junteng Liu is a first-year Ph.D. candidate in Computer Science at the Hong Kong University of Science and Technology (HKUST) and a member of the HKUST NLP Group. Professor Junxian He is his Ph.D. supervisor. He graduated from Shanghai Jiao Tong University (SJTU) in June 2024 after completing the B.Eng. program from 2020 to 2024. His research focuses on natural language processing and machine learning, including LLM reasoning and reinforcement learning, hallucination in vision-language models, and LLM truthfulness and interpretability.</p>
+        <div class="chips" aria-label="Research areas">
+          <span class="chip">Natural Language Processing</span>
+          <span class="chip">Machine Learning</span>
+          <span class="chip">LLM Reasoning</span>
+          <span class="chip">Reinforcement Learning</span>
+          <span class="chip">VLM Hallucination</span>
+          <span class="chip">Truthfulness &amp; Interpretability</span>
+        </div>
+      </section>
+
+      <section class="card block" id="details">
+        <div class="section-head"><span class="num">01</span><h2>Personal Details</h2></div>
+        <div class="grid2">
+          <div class="fact"><h3>Name</h3><p>Junteng Liu</p></div>
+          <div class="fact"><h3>Current position</h3><p>First-year Ph.D. candidate, HKUST NLP Group</p></div>
+          <div class="fact"><h3>Doctoral program</h3><p>Ph.D. in Computer Science, HKUST, 2024–Present</p></div>
+          <div class="fact"><h3>Undergraduate background</h3><p>B.Eng., Shanghai Jiao Tong University, 2020–2024; graduated June 2024</p></div>
+          <div class="fact"><h3>Research focus</h3><p>Natural language processing and machine learning</p></div>
+          <div class="fact"><h3>Contact email</h3><p><a href="mailto:jliugi@connect.ust.hk">jliugi@connect.ust.hk</a></p></div>
+        </div>
+      </section>
+
+      <section class="card block" id="background">
+        <div class="section-head"><span class="num">02</span><h2>Academic Background</h2></div>
+        <div class="timeline">
+          <article class="role">
+            <h3>Hong Kong University of Science and Technology</h3>
+            <div class="when">Ph.D. in Computer Science · 2024–Present</div>
+            <p>Member of the HKUST NLP Group. Ph.D. supervisor: Professor Junxian He. Recorded status: first-year Ph.D. candidate.</p>
+          </article>
+          <article class="role">
+            <h3>Shanghai Jiao Tong University</h3>
+            <div class="when">B.Eng. · 2020–2024 · Graduated June 2024</div>
+            <p>Professor Junxian He previously advised Junteng Liu during his undergraduate studies at SJTU.</p>
+          </article>
+          <article class="role">
+            <h3>Honors and Awards</h3>
+            <p><strong>Zhiyuan Honor Scholarship</strong>, Shanghai Jiao Tong University.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card block" id="experience">
+        <div class="section-head"><span class="num">03</span><h2>Research Experience</h2></div>
+        <div class="timeline">
+          <article class="role"><h3>Ph.D. research in Computer Science · HKUST NLP Group</h3><div class="when">2024–Present</div><p>Supervisor: Professor Junxian He.</p></article>
+          <article class="role"><h3>Research Intern · MINIMAX</h3><div class="when">February 2025–Present</div></article>
+          <article class="role"><h3>Research Intern · Tencent WXG</h3><div class="when">June 2024–September 2024</div><p>Advisor: Zifei Shan.</p></article>
+          <article class="role"><h3>Research Intern · Shanghai AI Lab</h3><div class="when">June 2023–December 2023</div><p>Advisor: Prof. Yu Cheng.</p></article>
+        </div>
+      </section>
+
+      <section class="card block" id="publications">
+        <div class="section-head"><span class="num">04</span><h2>Publications</h2></div>
+        <p class="note" style="margin-top:-6px;margin-bottom:14px">All six publications recorded in memory are listed here and on the dedicated <a href="publications/">Publications page</a>. The <a href="cv/">CV page</a> also includes the publication list.</p>
+
+        <article class="pub">
+          <div class="pub-title"><a href="https://github.com/Betabruindicate/LJT-Homepage/blob/master/_publications/synlogic.md">SynLogic: Synthesizing Verifiable Reasoning Data at Scale for Learning Logical Reasoning and Beyond</a></div>
+          <div class="authors">Junteng Liu, Yuanxiang Fan, Zhuo Jiang, Han Ding, Yongyi Hu, Chi Zhang, Yiqi Shi, Shitong Weng, Aili Chen, Shiqi Chen, Yunan Huang, Mozhi Zhang, Pengyu Zhao, Junjie Yan, Junxian He.</div>
+          <div class="venue"><span class="badge venue">arXiv, 2025</span><span class="badge role">First author</span></div>
+          <div class="code">A GitHub code repository is recorded.</div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title"><a href="https://github.com/Betabruindicate/LJT-Homepage/blob/master/_publications/vlm-chart-perception.md">On the Perception Bottleneck of VLMs for Chart Understanding</a></div>
+          <div class="authors">Junteng Liu, Weihao Zeng, Xiwen Zhang, Yijun Wang, Zifei Shan, Junxian He.</div>
+          <div class="venue"><span class="badge venue">arXiv, 2025</span><span class="badge role">First author</span></div>
+          <div class="code">GitHub code repository: <strong>Vision4Chart</strong>.</div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title"><a href="https://github.com/Betabruindicate/LJT-Homepage/blob/master/_publications/universal-truthfulness-hyperplane.md">On the Universal Truthfulness Hyperplane Inside LLMs</a></div>
+          <div class="authors">Junteng Liu, Shiqi Chen, Yu Cheng, Junxian He.</div>
+          <div class="venue"><span class="badge venue">EMNLP 2024</span><span class="badge role">First author</span></div>
+          <div class="code">GitHub code repository: <strong>Universal_Truthfulness_Hyperplane</strong>.</div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title"><a href="https://github.com/Betabruindicate/LJT-Homepage/blob/master/_publications/in-context-sharpness-alerts.md">In-Context Sharpness as Alerts: An Inner Representation Perspective for Hallucination Mitigation</a></div>
+          <div class="authors">Shiqi Chen, Miao Xiong, Junteng Liu, Zhengxuan Wu, Teng Xiao, Siyang Gao, Junxian He.</div>
+          <div class="venue"><span class="badge venue">ICML 2024</span><span class="badge role">Co-author</span></div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title"><a href="https://github.com/Betabruindicate/LJT-Homepage/blob/master/_publications/c-eval.md">C-Eval: A Multi-Level Multi-Discipline Chinese Evaluation Suite for Foundation Models</a></div>
+          <div class="authors">Yuzhen Huang, Yuzhuo Bai, Zhihao Zhu, Junlei Zhang, Jinghan Zhang, Tangjun Su, Junteng Liu, Chuancheng Lv, Yikai Zhang, Jiayi Lei, Yao Fu, Maosong Sun, Junxian He.</div>
+          <div class="venue"><span class="badge venue">NeurIPS 2023</span><span class="badge role">Co-author</span></div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-title"><a href="https://github.com/Betabruindicate/LJT-Homepage/blob/master/_publications/composing-parameter-efficient-modules.md">Composing Parameter-Efficient Modules with Arithmetic Operations</a></div>
+          <div class="authors">Jinghan Zhang, Shiqi Chen, Junteng Liu, Junxian He.</div>
+          <div class="venue"><span class="badge venue">NeurIPS 2023</span><span class="badge role">Co-author</span></div>
+        </article>
+      </section>
+
+      <section class="card block" id="skills">
+        <div class="section-head"><span class="num">05</span><h2>Skills &amp; Research Areas</h2></div>
+        <div class="skills">
+          <span class="skill strong">Natural Language Processing</span>
+          <span class="skill strong">Machine Learning</span>
+          <span class="skill">LLM Reasoning</span>
+          <span class="skill">Reinforcement Learning</span>
+          <span class="skill">Hallucination in Vision-Language Models</span>
+          <span class="skill">LLM Truthfulness</span>
+          <span class="skill">Interpretability</span>
+          <span class="skill">Verifiable Reasoning Data Synthesis</span>
+          <span class="skill">Logical Reasoning</span>
+          <span class="skill">Chart Understanding</span>
+          <span class="skill">Vision-Language Perception Analysis</span>
+          <span class="skill">Inner-Representation Hallucination Mitigation</span>
+          <span class="skill">Foundation-Model Evaluation</span>
+          <span class="skill">Chinese Evaluation Suites</span>
+          <span class="skill">Parameter-Efficient Modules</span>
+        </div>
+        <p class="note">These items are drawn from the recorded research focus, interests, and publication topics. No additional programming languages or software tools were specified in memory.</p>
+      </section>
+
+      <section class="card block" id="contact">
+        <div class="section-head"><span class="num">06</span><h2>Contact Information</h2></div>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:jliugi@connect.ust.hk"><strong>Email</strong><span>jliugi@connect.ust.hk</span></a>
+          <a class="contact-card" href="https://github.com/Vicent0205"><strong>GitHub</strong><span>https://github.com/Vicent0205</span></a>
+          <a class="contact-card" href="https://scholar.google.com/citations?hl=en&amp;user=tbK9jl4AAAAJ&amp;view_op=list_works&amp;sortby=pubdate"><strong>Google Scholar</strong><span>Publication profile sorted by date</span></a>
+          <a class="contact-card" href="https://x.com/junteng88716710"><strong>X (Twitter)</strong><span>@junteng88716710</span></a>
+        </div>
+        <p class="note">Repository: <a href="https://github.com/Betabruindicate/LJT-Homepage">Betabruindicate/LJT-Homepage</a> · Forked and renamed from <a href="https://github.com/academicpages/academicpages.github.io">academicpages/academicpages.github.io</a>.</p>
+      </section>
+
+      <footer class="footer">
+        © Junteng Liu · Built with the Academic Pages template. Content is limited to the personal information recorded in memory.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
