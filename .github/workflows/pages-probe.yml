@@ -6,23 +6,18 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Pages build diagnostics
+      - name: Concise Pages status
         run: |
           set +e
+          API="https://api.github.com/repos/${{ github.repository }}/pages"
           AUTH="Authorization: Bearer ${{ github.token }}"
-          BASE="https://api.github.com/repos/${{ github.repository }}/pages"
+          HDR='Accept: application/vnd.github+json'
           echo '--- PAGE ---'
-          curl -sS -w '\nHTTP_STATUS:%{http_code}\n' -H "$AUTH" -H 'Accept: application/vnd.github+json' "$BASE"
-          echo '--- LATEST BUILD ---'
-          curl -sS -w '\nHTTP_STATUS:%{http_code}\n' -H "$AUTH" -H 'Accept: application/vnd.github+json' "$BASE/builds/latest"
-          echo '--- BUILDS ---'
-          curl -sS -w '\nHTTP_STATUS:%{http_code}\n' -H "$AUTH" -H 'Accept: application/vnd.github+json' "$BASE/builds?per_page=5"
-          echo '--- REQUEST BUILD ---'
-          curl -sS -w '\nHTTP_STATUS:%{http_code}\n' -X POST -H "$AUTH" -H 'Accept: application/vnd.github+json' "$BASE/builds"
-          sleep 20
-          echo '--- LATEST BUILD AFTER REQUEST ---'
-          curl -sS -w '\nHTTP_STATUS:%{http_code}\n' -H "$AUTH" -H 'Accept: application/vnd.github+json' "$BASE/builds/latest"
-          echo '--- PUBLIC HOME ---'
-          curl -sS -I -L --max-time 25 'https://betabruindicate.github.io/LJT-Homepage/'
-          echo '--- PUBLIC INDEX HTML ---'
-          curl -sS -L --max-time 25 'https://betabruindicate.github.io/LJT-Homepage/index.html' | head -c 500
+          curl -sS -H "$AUTH" -H "$HDR" "$API" | jq '{status,html_url,build_type,source}'
+          echo '--- LATEST ---'
+          curl -sS -H "$AUTH" -H "$HDR" "$API/builds/latest" | jq '{status,error,commit,created_at,updated_at,duration}'
+          echo '--- FAILED BUILD ---'
+          curl -sS -H "$AUTH" -H "$HDR" "$API/builds/1394169130" | jq '.'
+          echo '--- HOME STATUS ---'
+          curl -sS -o /tmp/home.html -w 'HTTP:%{http_code} BYTES:%{size_download}\n' -L 'https://betabruindicate.github.io/LJT-Homepage/'
+          grep -o '<title>[^<]*</title>' /tmp/home.html | head -1
