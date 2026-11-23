@@ -1,0 +1,17 @@
+name: Pages API probe
+on:
+  workflow_dispatch:
+permissions: write-all
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pages API diagnostics
+        run: |
+          set +e
+          echo '--- GET ---'
+          curl -sS -w '\nHTTP_STATUS:%{http_code}\n' -H "Authorization: Bearer ${{ github.token }}" -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' "https://api.github.com/repos/${{ github.repository }}/pages"
+          echo '--- POST LEGACY ---'
+          curl -sS -w '\nHTTP_STATUS:%{http_code}\n' -X POST -H "Authorization: Bearer ${{ github.token }}" -H 'Accept: application/vnd.github+json' -H 'X-GitHub-Api-Version: 2022-11-28' "https://api.github.com/repos/${{ github.repository }}/pages" -d '{"build_type":"legacy","source":{"branch":"gh-pages","path":"/"}}'
+          echo '--- PUBLIC HEAD ---'
+          curl -sS -I -L --max-time 25 'https://betabruindicate.github.io/LJT-Homepage/'
