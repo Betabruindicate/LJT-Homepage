@@ -12,6 +12,8 @@ The site content is based on the personal details, academic background, research
 
 The source files are available in [`_pages/about.md`](_pages/about.md), [`_pages/publications.html`](_pages/publications.html), [`_pages/cv.md`](_pages/cv.md), and [`_publications/`](_publications/).
 
+GitHub Pages is configured for the `gh-pages` branch at `https://betabruindicate.github.io/LJT-Homepage/`.
+
 ## Contact
 
 - Email: [jliugi@connect.ust.hk](mailto:jliugi@connect.ust.hk)
