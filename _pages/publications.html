@@ -5,32 +5,45 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+<p>Publications recorded in Junteng Liu's memory profile are listed below. The complete author lists and publication-year records are retained.</p>
+
+{% if site.author.googlescholar %}
+  <div class="wordwrap">You can also find publication records on <a href="{{ site.author.googlescholar }}">Junteng Liu's Google Scholar profile</a>.</div>
 {% endif %}
 
+{% assign preprints = site.publications | where: "category", "preprints" | sort: "order" %}
+{% assign conference_papers = site.publications | where: "category", "conferences" | sort: "order" %}
 
+{% if preprints.size > 0 %}
+<section class="publication-group">
+  <h2>Preprints</h2>
+  {% for post in preprints %}
+    <article class="archive__item publication-entry">
+      <h3 class="archive__item-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      <p class="publication-authors">{{ post.authors }}</p>
+      <p class="publication-venue"><em>{{ post.venue }}</em>{% if post.role %} · {{ post.role }}{% endif %}</p>
+      {% if post.code_note %}<p class="publication-code">{{ post.code_note }}</p>{% endif %}
+    </article>
+  {% endfor %}
+</section>
+{% endif %}
 
+{% if conference_papers.size > 0 %}
+<section class="publication-group">
+  <h2>Conference Papers</h2>
+  {% for post in conference_papers %}
+    <article class="archive__item publication-entry">
+      <h3 class="archive__item-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      <p class="publication-authors">{{ post.authors }}</p>
+      <p class="publication-venue"><em>{{ post.venue }}</em>{% if post.role %} · {{ post.role }}{% endif %}</p>
+      {% if post.code_note %}<p class="publication-code">{{ post.code_note }}</p>{% endif %}
+    </article>
+  {% endfor %}
+</section>
+{% endif %}
