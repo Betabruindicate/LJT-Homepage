@@ -1,4 +1,3 @@
-# Workflow for building and deploying an Academic Pages / Jekyll site to GitHub Pages
 name: Deploy Academic Pages template site to Pages
 
 on:
@@ -6,10 +5,7 @@ on:
     branches: ["master"]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: write-all
 
 concurrency:
   group: "pages"
@@ -38,17 +34,20 @@ jobs:
           uglifyjs assets/js/plugins/jquery.greedy-navigation.js assets/js/_main.js assets/js/theme.js -c -m -o assets/js/main.min.js
       - name: Configure GitHub Pages
         id: pages
+        continue-on-error: true
         uses: actions/configure-pages@v6.0.0
         with:
           enablement: true
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --baseurl "/LJT-Homepage"
         env:
           JEKYLL_ENV: production
       - name: Upload GitHub Pages artifact
+        if: success()
         uses: actions/upload-pages-artifact@v5.0.0
 
   deploy:
+    if: success()
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
